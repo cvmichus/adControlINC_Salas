@@ -1,5 +1,5 @@
 <?php
- date_default_timezone_set("America/Mexico_City");
+date_default_timezone_set("America/Mexico_City");
   session_start();
   ini_set("display_errors",0);
   include "../includes/bd.php";
@@ -18,17 +18,16 @@
 
     $secc="home";
 
-
 ?>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 <script>
     $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example2').DataTable();
 } );
 </script>
 
-<table id="example" class="display" style="width:100%">
+<table id="example2" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>#</th>
@@ -77,25 +76,3 @@
             </tr>
         </tfoot>
     </table>
-
-
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="detallemodal"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-      </div>
-    </div>
-  </div>
-</div>
