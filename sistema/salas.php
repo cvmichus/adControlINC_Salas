@@ -21,26 +21,19 @@
             /*ADMIN*/
         if($PerifilUsuario == 0){
         ?>
+        <style>
+                #calendar {
+        max-width: 800px;
+    }
+        </style>
            <div class="row">
                     <div class="col-md-12 col-lg-6 col-sm-12">
                         <div class="white-box">
                             <h3 class="box-title">SALA 1</h3>
                             <div class="comment-center">
-                                <div class="comment-body">
-                                    <div class="user-img"> <img src="../plugins/images/users/pawandeep.jpg" alt="user" class="img-circle"></div>
-                                    <div class="mail-contnet">
-                                        <h5>Pavan kumar</h5> <span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat.</span><a href="javacript:void(0)" class="action"><i class="ti-close text-danger"></i></a> <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><span class="time pull-right">April 14, 2016</span></div>
-                                </div>
-                                <div class="comment-body">
-                                    <div class="user-img"> <img src="../plugins/images/users/sonu.jpg" alt="user" class="img-circle"> </div>
-                                    <div class="mail-contnet">
-                                        <h5>Sonu Nigam</h5> <span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat.</span><a href="javacript:void(0)" class="action"><i class="ti-close text-danger"></i></a> <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><span class="time pull-right">April 14, 2016</span></div>
-                                </div>
-                                <div class="comment-body b-none">
-                                    <div class="user-img"> <img src="../plugins/images/users/arijit.jpg" alt="user" class="img-circle"> </div>
-                                    <div class="mail-contnet">
-                                        <h5>Arijit Sinh</h5> <span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. </span><a href="javacript:void(0)" class="action"><i class="ti-close text-danger"></i></a> <a href="javacript:void(0)" class="action"><i class="ti-check text-success"></i></a><span class="time pull-right">April 14, 2016</span></div>
-                                </div>
+                               
+                               
+                          
                             </div>
                         </div>
                     </div>
@@ -79,6 +72,9 @@
                         <div class="white-box">
                             <h3 class="box-title">SALA 1</h3>
                             <div class="comment-center">
+                                <p>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">ADD + </button>
+                                </p>
                                 <?php
                                 $codsala="1";
                                 $sqlSala1 = "{call sp_INCSALAS_ObtenerEventosSalas (?)}";
@@ -130,11 +126,45 @@
                         </div>
                     </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <input type="text" id="valor1" name="valor1">
+             <input type="text" id="valor2" name="valor2">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="salvar" class="btn btn-primary">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
                 </div>
         <?php
         }
         ?>
-    
+       <script>
+            $(document).ready(function()
+            {
+            $("#salvar").click(function () {    
+            alert("Bien!!!, la edad seleccionada es: " );
+            $valor
+            $('#exampleModal').modal('hide')
+            //alert("Bien!!!, la edad seleccionada es: " + $(this).val());  
+            });
+            });
+        </script>
 
 
     
