@@ -86,12 +86,12 @@
                         <a href="admin.php" class="waves-effect"><i class="fa fa-toggle-on fa-fw" aria-hidden="true"></i><span class="hide-menu">Inicio</span></a>
                     </li>
 
-                    <li>
-                        <a <?php if ($secc == 'usuarios') { echo "style='padding: 10px 0 0;' "; }; ?> href="#" onclick="cargarDiv('#principal','usuarios.php');" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">Usuario</span></a>
+                    <li <?php if ($secc == 'usuarios') { echo "style='padding: 10px 0 0;' "; }; ?>>
+                        <a  href="#" onclick="cargarDiv('#principal','usuarios.php');" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">Usuario</span></a>
                     </li>
 
-                    <li>
-                        <a<?php if ($secc == 'sala') { echo "style='padding: 10px 0 0;' "; }; ?> href="#" onclick="cargarDiv('#principal','salas.php');"  class="waves-effect"><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i><span class="hide-menu">Sala de Juntas</span></a>
+                    <li <?php if ($secc == 'sala') { echo "style='padding: 10px 0 0;' "; }; ?>>
+                        <a href="#" onclick="cargarDiv('#principal','salas.php');"  class="waves-effect"><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i><span class="hide-menu">Sala de Juntas</span></a>
                     </li>
                     
                     <li>
@@ -157,7 +157,7 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $.toast({
-            heading: 'Welcome to Pixel admin',
+            heading: 'Bienvenido <?php echo  $NombreUsuario ?>',
             text: 'Use the predefined ones, or specify a custom position object.',
             position: 'top-right',
             loaderBg: '#ff6849',

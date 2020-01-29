@@ -16,7 +16,8 @@
     $ApellidoP = $_SESSION['ApellidoP'];
     $ApellidoM = $_SESSION['ApellidoM'];
 
-    $secc="salas";
+    $secc=="sala";
+    $HoraGuardado = date("H:i:s");
 
             /*ADMIN*/
         if($PerifilUsuario == 0){
@@ -26,6 +27,7 @@
         max-width: 800px;
     }
         </style>
+
            <div class="row">
                     <div class="col-md-12 col-lg-6 col-sm-12">
                         <div class="white-box">
@@ -73,7 +75,10 @@
                             <h3 class="box-title">SALA 1</h3>
                             <div class="comment-center">
                                 <p>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">ADD + </button>
+                             <button type="button" class="btn btn-success" onclick="cargarDiv('#principal','form.php');" >ADD + </button>
+
+                              <!-- data-toggle="modal" data-target="#exampleModal"-->
+        
                                 </p>
                                 <?php
                                 $codsala="1";
@@ -131,20 +136,75 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Evento Sala 1</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form>
-            <input type="text" id="valor1" name="valor1">
-             <input type="text" id="valor2" name="valor2">
+
+          <form class="form-inline" method="get" id="formdata">
+        <div class="form-group">
+            <label for="nombre">Nombre Evento</label>
+            <input type="text" class="form-control" id="nombre" iname="nombre"  aria-describedby="emailHelp" placeholder="Nombre Evento">
+            <small id="emailHelp" class="form-text text-muted">favor de llenar este dato.</small>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripcion</label>
+            <textarea type="text" class="form-control" id="descripcion" iname="descripcion"  aria-describedby="emailHelp" placeholder="Descripcion"></textarea>
+            <small id="emailHelp" class="form-text text-muted">favor de llenar este dato.</small>
+
+        </div>
+
+         <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" class="form-control" id="fecha" iname="fecha"  aria-describedby="emailHelp" placeholder="Fecha">
+            <small id="emailHelp" class="form-text text-muted">favor de llenar este dato.</small>
+
+        </div>
+
+         <div class="form-group">
+            <label for="horainicio">Hora inicio</label>
+            <input type="time" class="form-control" id="horainicio" iname="horainicio"  aria-describedby="emailHelp" placeholder="Hora inicio">
+            <small id="emailHelp" class="form-text text-muted">favor de llenar este dato.</small>
+
+        </div>
+
+         <div class="form-group">
+            <label for="horafin">Hora Fin</label>
+            <input type="time" class="form-control" id="horafin" iname="horafin"  aria-describedby="emailHelp" placeholder="Hora Fin">
+            <small id="emailHelp" class="form-text text-muted">favor de llenar este dato.</small>
+
+        </div>
+
+             <input type="hidden" class="form-control" id="usuario" iname="usuario"  value="<?php echo $Codigousuario; ?>"> 
+             <input type="hidden" class="form-control" id="estatus" iname="estatus"  value="1"> 
+             <input type="hidden" class="form-control" id="sala" iname="sala"  value="1"> 
+             <input type="hidden" class="form-control" id="horaalta" iname="horaalta"  value="<?php echo $HoraGuardado; ?>"> 
+                
+                   <input class="btn btn-primary" type="button" id="botonenviar" value="Guardar">
+
         </form>
+
+        <div id="exito" style="display:none" class="alerta alerta-success" role="alerta">
+                        La informacion se guardo con exito, puedes guardar otro evento 
+                        </div>
+                         <div id="vacio" style="display:none" class="alerta alerta-danger" role="alerta">
+                        La informacion esta vacia
+                        </div>
+                        <div id="fracaso" style="display:none" class="alerta alerta-warning" role="alerta">
+                        Se ha producido un error durante el envío de datos, Intentelo de Nuevo.
+                        </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id="salvar" class="btn btn-primary">Salvar</button>
+        
+
+
+   
+
       </div>
     </div>
   </div>
@@ -154,17 +214,6 @@
         <?php
         }
         ?>
-       <script>
-            $(document).ready(function()
-            {
-            $("#salvar").click(function () {    
-            alert("Bien!!!, la edad seleccionada es: " );
-            $valor
-            $('#exampleModal').modal('hide')
-            //alert("Bien!!!, la edad seleccionada es: " + $(this).val());  
-            });
-            });
-        </script>
-
+      
 
     

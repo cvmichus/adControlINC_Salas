@@ -154,8 +154,8 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $.toast({
-            heading: 'Welcome to Pixel admin',
-            text: 'Use the predefined ones, or specify a custom position object.',
+            heading: 'Bienvenido <?php echo  $NombreUsuario ?>',
+            text: 'Al Sistema de Administracion y Control de Salas de junta.',
             position: 'top-right',
             loaderBg: '#ff6849',
             icon: 'info',
@@ -165,13 +165,8 @@
     });
     </script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-<script>
-    $(document).ready(function() {
-    $('#example').DataTable();
-} );
-</script>
+
+
 </body>
 
 </html>
